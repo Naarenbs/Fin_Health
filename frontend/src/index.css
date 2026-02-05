@@ -1,0 +1,185 @@
+/* frontend/src/index.css */
+:root {
+  /* LIGHT THEME VARIABLES */
+  --primary: #2563eb;
+  --bg-sidebar: rgba(255, 255, 255, 0.8);
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+/* DARK THEME VARIABLES */
+.dark-mode {
+  --primary: #60a5fa;
+  --bg-sidebar: rgba(15, 23, 42, 0.8);
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* RESET */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent side scrolling */
+}
+
+/* === THE ANIMATION PART === */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-main);
+  transition: color 0.3s;
+  
+  /* LIGHT MODE GRADIENT (Blue/White/Purple mix) */
+  background: linear-gradient(-45deg, #eff6ff, #dbeafe, #e0e7ff, #f3e8ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+body.dark-mode {
+  /* DARK MODE GRADIENT (Deep Navy/Purple/Black) */
+  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #020617) !important;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* === KEYFRAMES (The Engine) === */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* === LAYOUT STYLES === */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh; /* Ensures it fills the screen */
+}
+
+.sidebar {
+  width: 250px;
+  /* Glass Effect */
+  background: var(--bg-sidebar);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+
+.upload-area {
+  border: 2px dashed var(--text-muted);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--bg-card);
+}
+
+.upload-area:hover {
+  border-color: var(--primary);
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.menu-item {
+  padding: 10px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.menu-item:hover, .menu-item.active {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}
+
+/* Recharts Container Fix */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
