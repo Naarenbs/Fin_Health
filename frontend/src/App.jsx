@@ -35,7 +35,7 @@ function App() {
   // FETCH HISTORY FUNCTION
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/reports");
+      const res = await axios.get("https://fin-health.onrender.com/reports");
       setHistoryList(res.data);
       setActiveTab('history'); // Switch view
     } catch (error) {
@@ -59,7 +59,7 @@ function App() {
     }
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/analyze", formData);
+      const res = await axios.post("https://fin-health.onrender.com/analyze", formData);
       setReport(res.data);
       setActiveTab('dashboard'); // Switch back to dashboard to see result
     } catch (error) {
