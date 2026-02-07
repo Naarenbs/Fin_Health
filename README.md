@@ -3,7 +3,7 @@
 ### Your AI-Powered Fractional CFO
 **Turn messy financial spreadsheets into actionable strategic insights in seconds.**
 
-[**🔴 LIVE DEMO**](YOUR_VERCEL_URL_HERE) | [**📺 WATCH VIDEO**](YOUR_VIDEO_URL_HERE)
+[**🔴 LIVE DEMO**](https://fin-health-orcin.vercel.app/) | [**📺 WATCH VIDEO**](https://www.loom.com/share/4a1744164c494eaba3126c39fd5c14c6)
 
 ---
 
